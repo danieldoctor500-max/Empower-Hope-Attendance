@@ -1,0 +1,3 @@
+# Keep local provider and deployment credentials out of version control.
+.env
+backend/.env

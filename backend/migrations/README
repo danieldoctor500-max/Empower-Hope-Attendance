@@ -1,0 +1,13 @@
+Run migrations from the backend directory after configuring DATABASE_URL:
+
+	python -m alembic upgrade head
+
+Create a new migration after changing SQLAlchemy models:
+
+	python -m alembic revision --autogenerate -m "describe the change"
+
+To roll back one revision:
+
+	python -m alembic downgrade -1
+
+The initial schema is followed by additive migrations. Do not edit an already-applied migration on a shared database.

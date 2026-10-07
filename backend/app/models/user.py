@@ -29,6 +29,25 @@ class User(Base):
         index=True,
     )
 
+    student_id: Mapped[str | None] = mapped_column(
+        String(30),
+        unique=True,
+        nullable=True,
+        index=True,
+    )
+
+    google_subject: Mapped[str | None] = mapped_column(
+        String(255),
+        unique=True,
+        nullable=True,
+    )
+
+    apple_subject: Mapped[str | None] = mapped_column(
+        String(255),
+        unique=True,
+        nullable=True,
+    )
+
     password_hash: Mapped[str] = mapped_column(
         String(255),
         nullable=False,

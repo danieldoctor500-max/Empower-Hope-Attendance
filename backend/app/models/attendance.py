@@ -14,6 +14,7 @@ from app.database.base import Base
 from app.models.enums import AttendanceStatus
 
 
+
 class Attendance(Base):
     __tablename__ = "attendance"
 

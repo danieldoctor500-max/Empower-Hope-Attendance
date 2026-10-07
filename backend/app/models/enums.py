@@ -46,4 +46,5 @@ class AttendanceStatus(str, Enum):
     PRESENT = "PRESENT"
     LATE = "LATE"
     EXCUSED = "EXCUSED"
+    ABSENT = "ABSENT"
     INCOMPLETE = "INCOMPLETE"

@@ -17,7 +17,15 @@
 		if (!response.ok) {
 			const detail = typeof payload === "object" ? payload.detail : payload;
 			if (response.status === 401) localStorage.removeItem(tokenKey);
-			throw new Error(Array.isArray(detail) ? detail.map((item) => item.msg).join("; ") : detail || "Request failed");
+			const messages = Array.isArray(detail)
+				? detail.map((item) => {
+					if (item.loc?.includes("student_id") && item.type === "string_pattern_mismatch") {
+						return "Student ID can contain only letters, numbers, and hyphens (no spaces).";
+					}
+					return item.msg;
+				})
+				: [];
+			throw new Error(messages.length ? messages.join("; ") : detail || "Request failed");
 		}
 		return payload;
 	}

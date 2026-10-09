@@ -27,6 +27,12 @@ Requirements: Docker Desktop with Docker Compose.
 
 5. To create a separate Admin account, open **People** → **Add a person**, fill in the account details, and select **Administrator**. Sign out, then sign in using that Admin's email address and temporary password. The bootstrap script creates a Super Admin; use the People page to create additional administrators.
 
+To reset an existing Super Admin password, run this from the repository root. The script prompts for the account email and new password; password input is hidden:
+
+```sh
+docker compose exec backend python -m scripts.reset_admin_password
+```
+
 The Compose file requires `POSTGRES_PASSWORD` and `SECRET_KEY`; it has no built-in default credentials. The database is persisted in the `postgres_data` volume. For hosted deployments, use a dedicated least-privilege database account and TLS for any database connection that crosses a machine or network boundary.
 
 ### Google and Apple Sign-In

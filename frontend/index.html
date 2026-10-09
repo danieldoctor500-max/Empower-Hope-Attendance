@@ -78,6 +78,7 @@
 					</div>
 					<label for="signup-student-id">Student ID</label>
 					<input id="signup-student-id" name="student_id" type="text" minlength="3" maxlength="30" pattern="[A-Za-z0-9-]+" autocomplete="off" placeholder="For example, EH-000123" required>
+					<p class="form-footnote">Use 3-30 letters, numbers, or hyphens only. Do not include spaces.</p>
 					<label for="signup-email">Email address</label>
 					<input id="signup-email" name="email" type="email" autocomplete="email" placeholder="name@example.org" required>
 					<input id="signup-oauth-token" name="oauth_token" type="hidden">
@@ -91,6 +92,7 @@
 					<div id="signup-password-wrap">
 						<label for="signup-password">Password</label>
 						<input id="signup-password" name="password" type="password" autocomplete="new-password" minlength="8" placeholder="8+ characters" required>
+						<p class="form-footnote">Use at least 8 characters; no special format is required.</p>
 					</div>
 					<p id="signup-error" class="form-error" role="alert" hidden></p>
 					<button class="button button-primary button-wide" type="submit">Create account <span aria-hidden="true">→</span></button>
